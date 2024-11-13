@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Department Selection - Hospital Ticket Management System</title>     <style> 
+    body { 
+            font-family: Arial, sans-serif; 
+            background-color: white; /* White background */             margin: 0;             padding: 0; 
+        } 
+        .container {             width: 80%; 
+            margin: 30px auto; /* Center the container */ 
+        } 
+        .main-content {             padding: 20px; 
+        } 
+        .main-content h2 {             text-align: center;             color: black; 
+        } 
+        form {             width: 100%;             max-width: 400px; 
+            margin: auto; /* Center the form */ 
+        }         label { 
+            display: block; /* Display labels as block elements */             margin-bottom: 5px; /* Space below the label */             color: black; /* Label text color */ 
+        text-align: left; /* Left-align the labels */ 
+        } 
+        input[type="text"], select { 
+            width: 100%; /* Full width of input/select */             padding: 10px; /* Space inside the boxes */             margin-bottom: 15px; /* Space below the boxes */             border: 1px solid #ccc; /* Border for input/select */             border-radius: 4px; /* Rounded corners */             box-sizing: border-box; /* Box-sizing */ 
+        } 
+        input[type="submit"] { 
+            background-color: green; /* Green background for submit button */             color: white; /* White text color */ 
+            padding: 10px 15px; /* Padding for the button */             border: none; /* No border */             border-radius: 4px; /* Rounded corners */             cursor: pointer; /* Pointer cursor on hover */             width: 100%; /* Full width of button */ 
+        } 
+        input[type="submit"]:hover { 
+            background-color: darkgreen; /* Darker green on hover */ 
+        } 
+        footer { 
+            text-align: center; /* Center the footer text */             padding: 10px; /* Space around footer */ 
+        } 
+</style> 
+</head> 
+<body> 
+ 
+    <div class="container"> 
+        <div class="main-content"> 
+            <h2>Select the Department</h2> 
+            <form action="/submit_department" method="post"> 
+                <label for="name">Full Name:</label> 
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required> 
+ 
+                <label for="departments">Department:</label> 
+                <select id="departments" name="department" required> 
+                    <option value="">--Select Department--</option> 
+                    <option value="general_medicine">General Medicine</option> 
+                    <option value="cardiology">Cardiology</option> 
+                    <option value="neurology">Neurology</option> 
+                    <option value="orthopedics">Orthopedics</option> 
+                    <option value="pediatrics">Pediatrics</option> 
+                    <option value="gynecology">Gynecology</option> 
+                    <option value="dermatology">Dermatology</option> 
+                    <option value="ent">ENT</option> 
+                </select> 
+ 
+                <input type="submit" value="Submit"> 
+            </form> 
+    </div> 
+    </div> 
+ 
+    <footer> 
+        Hospital Ticket Management System &copy; 2024 
+    </footer> 
+ 
+</body> 
+</html> 
