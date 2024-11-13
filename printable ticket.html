@@ -1,0 +1,143 @@
+<html>
+<head>
+    <title>Patient Ticket Management</title>
+    <h1>Patient Ticket Management System</h1>
+</head>
+<body>
+    <div class="container">
+
+
+        <section class="ticket-form">
+            <h2>Create a New Ticket</h2>
+            <form id="ticketForm">
+                <label for="patientName">Patient Name:</label>
+                <input type="text" id="patientName" required pattern="[A-Za-z\s]+"  placeholder="Please enter text only......"  required>
+
+                <label for="serviceType">Service Type:</label>
+                <select id="serviceType" required>
+                    <option value="">Select Service</option>
+                    <option value="consultation">Consultation</option>
+                    <option value="diagnostics">Diagnostics</option>
+                    <option value="treatment">Treatment</option>
+                </select>
+
+                <label for="description">Description:</label>
+                <textarea id="description" required></textarea>
+                <br>
+                <br>
+                <br>
+                <button type="submit">Generate Ticket</button>
+            </form>
+        </section>
+
+        <section class="ticket-output" id="ticketOutput" style="display: none;">
+            <h2>Your Ticket</h2>
+            <p id="ticketDetails"></p>
+            <button onclick="printTicket()">Print Ticket</button>
+            <button onclick="shareTicket()">Share Ticket</button>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('ticketForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const patientName = document.getElementById('patientName').value;
+            const serviceType = document.getElementById('serviceType').value;
+            const description = document.getElementById('description').value;
+
+            const ticketDetails = `Ticket for ${patientName}:\nService Type: ${serviceType}\nDescription: ${description}`;
+            document.getElementById('ticketDetails').innerText = ticketDetails;
+            document.getElementById('ticketOutput').style.display = 'block';
+        });
+
+        function printTicket() {
+            const ticketDetails = document.getElementById('ticketDetails').innerText;
+            const printWindow = window.open('', '', 'height=400,width=600');
+            printWindow.document.write('<pre>' + ticketDetails + '</pre>');
+            printWindow.document.close();
+            printWindow.print();
+        }
+
+        function shareTicket() {
+            const ticketDetails = document.getElementById('ticketDetails').innerText;
+            navigator.clipboard.writeText(ticketDetails).then(() => {
+                alert('Ticket details copied to clipboard!');
+            });
+        }
+    </script>
+    
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.ticket-form {
+    margin-bottom: 20px;
+}
+
+.ticket-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.ticket-form input,
+.ticket-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.ticket-form button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ticket-output {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #e9ecef;
+}
+
+.ticket-output button {
+    margin-right: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}
+
+    </style>
+
+    
+</body>
+</html>
