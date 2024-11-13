@@ -1,0 +1,87 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initialscale=1.0">  
+    <title>Hospital Ticket Management System</title>  
+ 
+    <style>         body {  
+            font-family: Arial, sans-serif;             background-color: #f4f4f4;             margin: 0;             padding: 0;             display: flex;             flex-direction: 
+column;             min-height: 100vh;             color: #333;  
+        }  
+  
+          
+        .navbar {  
+            background-color: #458854;             padding: 15px 20px;             display: flex;             align-items: center;             justify-content: space-between;             color: white;  
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
+        }  
+  
+        .navbar h1 {              margin: 0;             font-size: 20px;             color: white;  
+        }  
+  
+        .navbar .nav-links {             display: flex;             gap: 15px;             align-items: 
+center;  
+        }  
+  
+        .navbar select, .navbar a {             background-color: #458854;             color: white;             border: none;             font-size: 16px;             padding: 8px 12px;             border-radius: 5px;             cursor: pointer;             text-decoration: none;  
+           transition: background-color 0.3s;  
+       }  
+       .navbar select {      appearance: none;  
+}  
+   .navbar select:hover, .navbar a:hover {             background-color: #218838;  
+        }  
+  
+          
+        .container {             width: 90%;             max-width: 500px;             background-color: white;             padding: 30px;             borderradius: 10px;  
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);             margin: auto;             text-align: center;  
+        }  
+  
+        .container 	h2 	{            font-size: 	24px;            margin: 0 0 10px;  
+       }  
+.container p {     fontsize: 16px;  
+        color: #666;  
+       margin: 10px 0 20px;  
+        }  
+  
+        .container .contact-button {             padding: 12px 20px;             backgroundcolor: #458854;             color: white;             border: none;             border-radius: 5px;             font-size: 16px;             cursor: pointer;             transition: background-color 0.3s;  
+        }  
+  
+        .container .contact-button:hover {             background-color: #218838;  
+        }  
+         
+       footer {            textalign: center;     padding: 15px;     background-color: 
+#f2f2f2;            fontsize: 14px;            color: 
+#666;              width: 100%;  
+        }  
+    </style>  
+</head>  
+<body>  
+      
+    <nav class="navbar">  
+        <h1>VIT-AP Hospital</h1>  
+        <div class="nav-links">  
+            <select id="location">  
+                <option value="">Select Location</option>  
+                <option value="location1">Vijayawada</option>  
+                <option value="location2">Amaravati</option>  
+                <option value="location3">Gannavaram</option>  
+                <option value="location4">Guntur</option>  
+                <option value="location5">Inavolu</option>  
+           </select>  
+           <a href="#login">Login</a>  
+           <a href="#signup">Sign Up</a>  
+       </div>  
+</nav>  
+  
+   <div class="container">  
+        <h2>Hospital Ticket Management System</h2>  
+        <p>One click to care,booking tickets made simple and stress free</p>  
+        <button class="contact-button">Contact Us</button>  
+    </div>  
+  
+      
+    <footer>  
+        <p>&copy; Group-10. Hospital Ticket Management System. All Rights Reserved.</p>  
+    </footer>  
+</body>  
+</html>  
